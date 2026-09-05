@@ -1,8 +1,5 @@
-# Selected HL7 FHIR R5 definitions
+# HL7 FHIR R5 machine-readable definition bundles
 
-These files are copied from the official FHIR R5 JSON definitions archive.
-FHIR specification content is CC0. Referenced third-party terminologies may have separate terms.
+Materialized from the official FHIR R5 `definitions.json.zip`. Core resource StructureDefinitions (including Patient, Observation, Condition, Questionnaire, QuestionnaireResponse, DiagnosticReport, DocumentReference and MedicationStatement) live inside `profiles-resources.json`.
 
-Requested resources: condition, diagnosticreport, documentreference, medicationstatement, observation, patient, questionnaire, questionnaireresponse.
-
-Definitions not found as standalone files in the archive: condition, diagnosticreport, documentreference, medicationstatement, observation, patient, questionnaire, questionnaireresponse.
+FHIR specification content is CC0. Referenced third-party terminologies retain their own licensing terms.
