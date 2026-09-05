@@ -1,0 +1,290 @@
+[
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/agricultural_samples.csv",
+    "bytes": 38059,
+    "sha256": "413837d6b1bce0b1b934446fb9db53c690d869bff661761eddf95279e4b6526d"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/food_protein_conversion_factor.csv",
+    "bytes": 5516,
+    "sha256": "4e4fa6f828f33dbf81749907e8d97d994803fce67e6e6b7d4956d6677000bb02"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/acquisition_samples.csv",
+    "bytes": 155247,
+    "sha256": "3367b2037a305e77d3102776ffe46147d29e7ff5b9446194db85e124fab26196"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/sample_food.csv",
+    "bytes": 39068,
+    "sha256": "576038925df0e0b1688a877019c5c6984949a59da63d029e7818c1487a1af42e"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/lab_method_nutrient.csv",
+    "bytes": 9424,
+    "sha256": "dbf54f7d314f669711657fcd5b071c7ddc49cecbc87636f7d25c74e5dcd36461"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/food_attribute.csv",
+    "bytes": 753585,
+    "sha256": "5a9d52b73f638d4f39e294f119aa761aa43aa2346e07afd1c9b468d176833ff4"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/sub_sample_result.csv",
+    "bytes": 5294585,
+    "sha256": "926a2a8e84d12a37ca5be0f128679c3da9f524a889064bcec5e420a6198dac59"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/food_nutrient_conversion_factor.csv",
+    "bytes": 197078,
+    "sha256": "fc90733ef308ea92dac1478a263c8f7fb0ac7c4193e26876362361004883880b"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/measure_unit.csv",
+    "bytes": 1969,
+    "sha256": "62cde43ede7257a7748bb03d1b62f6905fab3ee0014efd41c9a040ac404da4d6"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/sub_sample_food.csv",
+    "bytes": 1478511,
+    "sha256": "d18c7c3a2763e1236deb3ea5ec9cbca4a3a5160637b70db124ed5f0802723dcb"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/input_food.csv",
+    "bytes": 327265,
+    "sha256": "77ee1c226c00aef0b76c80f3f8ce6720fbafe0641009afb69ea1ce2999335d3a"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/market_acquisition.csv",
+    "bytes": 914133,
+    "sha256": "5ad4aff0e80d1ab0639406c0938a5132dac8577cd54938263fc314434efdd821"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/food_component.csv",
+    "bytes": 158565,
+    "sha256": "fc3b0541c43022fa46814b31919e4c4a4826573cc896dd4ea12c8c0721ee5178"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/food.csv",
+    "bytes": 7229830,
+    "sha256": "c1c9a97d5bb3319dacb69d5b3183bef95bfe4c90455fe92484cf5ca72566ac2a"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/lab_method.csv",
+    "bytes": 13084,
+    "sha256": "8d3ff3b58b69afc19df1d15575ac1fef3e576a13c478abd5cf53acbe4481244b"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/foundation_food.csv",
+    "bytes": 17257,
+    "sha256": "5666629a4d06bf1d6a16114e1e3890cfa7d56523ec99134545a24ba216b521cb"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/food_calorie_conversion_factor.csv",
+    "bytes": 12061,
+    "sha256": "eb2390f0c47eb0361ca1e0d3dbefb11c2f34a191a3add3174b50284099845c3b"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/food_category.csv",
+    "bytes": 997,
+    "sha256": "a8e05c18cf010d44303f2a02765637a21f9ad621f90b4f811ab4a4a436cfedd9"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/food_attribute_type.csv",
+    "bytes": 331,
+    "sha256": "35ac614cc9958eaa5f43402bb592b595902b5cc43dad4b947958a0057287adde"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/food_portion.csv",
+    "bytes": 714051,
+    "sha256": "7af765126593f2bc3ca7befff30af23c5b4921714c51848b9424150c52f68bab"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/food_nutrient.csv",
+    "bytes": 10089141,
+    "sha256": "2b8eeb9d1f2104f09641041a025b7ab58be1653f4c10a52e047f2024ef42c480"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/lab_method_code.csv",
+    "bytes": 4582,
+    "sha256": "02769767d96fcd57272b6a58b2aa23dd57e1678f4ff9b1f7b015246da7a447cb"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/nutrient.csv",
+    "bytes": 21556,
+    "sha256": "226ba937d1a73e8c87bd7fdcdd577524699bef4025c9232ee474b7d3083498ff"
+  },
+  {
+    "source": "USDA FoodData Central Foundation Foods",
+    "release": "2026-04-30",
+    "license": "CC0-1.0 / public domain",
+    "source_url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip",
+    "path": "data/open/usda/foundation_foods_2026_04/food_update_log_entry.csv",
+    "bytes": 5235383,
+    "sha256": "f52cc54737543b3700782e03ad7a40414709ec9437df1326d19c18cde2aa67b3"
+  },
+  {
+    "source": "OHDSI OMOP CommonDataModel",
+    "release": "5.4",
+    "license": "Apache-2.0",
+    "source_url": "https://raw.githubusercontent.com/OHDSI/CommonDataModel/main/inst/ddl/5.4/postgresql/OMOPCDM_postgresql_5.4_ddl.sql",
+    "path": "data/open/omop/5.4/OMOPCDM_postgresql_5.4_ddl.sql",
+    "bytes": 18301,
+    "sha256": "c340fc1723cc71c411aa7d5d67844882ec720bed1135eca2b8a9029d0a3ef854"
+  },
+  {
+    "source": "OHDSI OMOP CommonDataModel",
+    "release": "5.4",
+    "license": "Apache-2.0",
+    "source_url": "https://raw.githubusercontent.com/OHDSI/CommonDataModel/main/inst/ddl/5.4/postgresql/OMOPCDM_postgresql_5.4_primary_keys.sql",
+    "path": "data/open/omop/5.4/OMOPCDM_postgresql_5.4_primary_keys.sql",
+    "bytes": 2886,
+    "sha256": "d8f50617f9a698bd9fbfe8d4106d76dcd543949a6976032786f64a91c1941f81"
+  },
+  {
+    "source": "OHDSI OMOP CommonDataModel",
+    "release": "5.4",
+    "license": "Apache-2.0",
+    "source_url": "https://raw.githubusercontent.com/OHDSI/CommonDataModel/main/inst/ddl/5.4/postgresql/OMOPCDM_postgresql_5.4_constraints.sql",
+    "path": "data/open/omop/5.4/OMOPCDM_postgresql_5.4_constraints.sql",
+    "bytes": 32696,
+    "sha256": "b09f54e6f1550c8594941a96798246944c10d42d9d4be8291a5058033be0f91d"
+  },
+  {
+    "source": "OHDSI OMOP CommonDataModel",
+    "release": "5.4",
+    "license": "Apache-2.0",
+    "source_url": "https://raw.githubusercontent.com/OHDSI/CommonDataModel/main/inst/ddl/5.4/postgresql/OMOPCDM_postgresql_5.4_indices.sql",
+    "path": "data/open/omop/5.4/OMOPCDM_postgresql_5.4_indices.sql",
+    "bytes": 10279,
+    "sha256": "ea23abbb327ee94e974728196cce2b2db466c7ad4bb4313f36fa3ce2388e8776"
+  },
+  {
+    "source": "CDC/NCHS NHANES public-use data (derived statistical output)",
+    "release": "2021-2023",
+    "terms": "NCHS Data User Agreement; statistical analysis/reporting only; no re-identification",
+    "source_url": "https://wwwn.cdc.gov/nchs/nhanes/",
+    "path": "data/derived/nhanes/2021_2023/dataset_catalog.csv",
+    "bytes": 5730,
+    "sha256": "d4da319415c56da3bc0fda6d6a7e95c77329c88b33579538d982d653ed2275f9"
+  },
+  {
+    "source": "CDC/NCHS NHANES public-use data (derived statistical output)",
+    "release": "2021-2023",
+    "terms": "NCHS Data User Agreement; statistical analysis/reporting only; no re-identification",
+    "source_url": "https://wwwn.cdc.gov/nchs/nhanes/",
+    "path": "data/derived/nhanes/2021_2023/measurement_distributions_exploratory.csv",
+    "bytes": 439258,
+    "sha256": "4ba7fd413fc5f02a87de66bdfdbc17487298b4de215be780025ddd3d92601bbc"
+  },
+  {
+    "source": "CDC/NCHS NHANES public-use data (derived statistical output)",
+    "release": "2021-2023",
+    "terms": "NCHS Data User Agreement; statistical analysis/reporting only; no re-identification",
+    "source_url": "https://wwwn.cdc.gov/nchs/nhanes/",
+    "path": "data/derived/nhanes/2021_2023/questionnaire_frequencies_exploratory.csv",
+    "bytes": 789560,
+    "sha256": "a0cb2fc6fb22c2a134979654203ff67830ad48211b3f7d4eed3337cd42432ba4"
+  },
+  {
+    "source": "CDC/NCHS NHANES public-use data (derived statistical output)",
+    "release": "2021-2023",
+    "terms": "NCHS Data User Agreement; statistical analysis/reporting only; no re-identification",
+    "source_url": "https://wwwn.cdc.gov/nchs/nhanes/",
+    "path": "data/derived/nhanes/2021_2023/README.md",
+    "bytes": 654,
+    "sha256": "f8ab72144190a650e268f820fa39d6c62a89a00b92ee1c0c4fffc9dd11410d02"
+  }
+]
