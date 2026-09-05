@@ -1,0 +1,57 @@
+name: Bootstrap health data
+
+on:
+  push:
+    branches:
+      - data/bootstrap-health-datasets
+    paths:
+      - .github/workflows/bootstrap-health-data.yml
+      - data/scripts/**
+      - data/sources.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout data branch
+        uses: actions/checkout@v4
+        with:
+          ref: data/bootstrap-health-datasets
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install data tooling
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pandas numpy requests
+
+      - name: Download and derive datasets
+        run: python data/scripts/bootstrap_open_data.py
+
+      - name: Show generated footprint
+        run: |
+          du -sh data/open data/derived data/generated || true
+          find data/open data/derived data/generated -type f -maxdepth 8 -print | sort
+
+      - name: Commit materialized open/derived data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/open data/derived data/generated
+          if git diff --cached --quiet; then
+            echo 'No materialized data changes.'
+            exit 0
+          fi
+          git commit -m 'data: materialize open and derived health datasets'
+          git push origin HEAD:data/bootstrap-health-datasets
