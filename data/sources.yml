@@ -1,0 +1,118 @@
+version: 1
+updated: 2026-09-06
+
+sources:
+  usda_foundation_foods:
+    status: bundle-open
+    release: "2026-04-30"
+    license: CC0-1.0 / public domain
+    download: https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_foundation_food_csv_2026-04-30.zip
+    homepage: https://fdc.nal.usda.gov/download-datasets/
+    target: data/open/usda/foundation_foods_2026_04
+
+  fhir_r5:
+    status: bundle-selected-core
+    release: "5.0.0"
+    license: CC0-1.0 for the FHIR specification; third-party terminologies retain separate rights
+    download: https://hl7.org/fhir/R5/definitions.json.zip
+    homepage: https://hl7.org/fhir/R5/downloads.html
+    target: data/open/fhir/r5
+    resources:
+      - Patient
+      - Observation
+      - Condition
+      - MedicationStatement
+      - Questionnaire
+      - QuestionnaireResponse
+      - DocumentReference
+      - DiagnosticReport
+
+  omop_cdm_5_4:
+    status: bundle-open
+    release: "5.4"
+    license: Apache-2.0
+    homepage: https://github.com/OHDSI/CommonDataModel
+    target: data/open/omop/5.4
+    files:
+      - https://raw.githubusercontent.com/OHDSI/CommonDataModel/main/inst/ddl/5.4/postgresql/OMOPCDM_postgresql_5.4_ddl.sql
+      - https://raw.githubusercontent.com/OHDSI/CommonDataModel/main/inst/ddl/5.4/postgresql/OMOPCDM_postgresql_5.4_primary_keys.sql
+      - https://raw.githubusercontent.com/OHDSI/CommonDataModel/main/inst/ddl/5.4/postgresql/OMOPCDM_postgresql_5.4_constraints.sql
+      - https://raw.githubusercontent.com/OHDSI/CommonDataModel/main/inst/ddl/5.4/postgresql/OMOPCDM_postgresql_5.4_indices.sql
+
+  nhanes_2021_2023:
+    status: analysis-input-only
+    release: "August 2021-August 2023"
+    terms: NCHS Data User Agreement; statistical analysis/reporting only; no re-identification or identifiable-data linkage
+    homepage: https://wwwn.cdc.gov/nchs/nhanes/
+    data_base: https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2021/DataFiles
+    raw_committed: false
+    derived_target: data/derived/nhanes/2021_2023
+    datasets:
+      demographics:
+        - DEMO_L
+      questionnaire:
+        - ALQ_L
+        - BPQ_L
+        - DBQ_L
+        - DIQ_L
+        - DPQ_L
+        - HSQ_L
+        - MCQ_L
+        - PAQ_L
+        - RHQ_L
+        - RXQ_RX_L
+        - SLQ_L
+        - SMQ_L
+        - SMQRTU_L
+        - WHQ_L
+      examination:
+        - BMX_L
+        - BPXO_L
+      laboratory:
+        - ALB_CR_L
+        - BIOPRO_L
+        - CBC_L
+        - FERTIN_L
+        - FOLATE_L
+        - GHB_L
+        - GLU_L
+        - HDL_L
+        - HSCRP_L
+        - INS_L
+        - TCHOL_L
+        - TFR_L
+        - TRIGLY_L
+        - TST_L
+        - VID_L
+
+  loinc:
+    status: login-required
+    release: "2.83"
+    released: "2026-08-19"
+    license: LOINC license; commercial/non-commercial use and redistribution permitted subject to attribution and license terms
+    homepage: https://loinc.org/downloads
+    expected_file: Loinc_2.83.zip
+    expected_target: data/restricted/loinc/2.83
+    note: Complete download requires a free LOINC login; do not store credentials in Git.
+
+  dge_reference_values:
+    status: reference-only-pending-redistribution-review
+    homepage: https://www.dge.de/wissenschaft/referenzwerte-tool/
+    note: Excel export exists; do not bundle until redistribution terms are explicitly confirmed.
+
+  caliper:
+    status: reference-only-pending-redistribution-review
+    homepage: https://caliperproject.ca/caliper/database/
+
+  norip:
+    status: reference-only-pending-redistribution-review
+    homepage: https://www.norip.info/
+
+  lmu_muenchen_lab_ranges:
+    status: reference-only-pending-redistribution-review
+    homepage: https://mitlabmed2.srv.med.uni-muenchen.de/php/lv/lv_start.php
+
+  promis:
+    status: do-not-bundle
+    homepage: https://www.healthmeasures.net/explore-measurement-systems/promis
+    note: Use the CAT/IRT concepts, but build a DeltaMetrics-owned question bank unless the required permissions are obtained.
