@@ -1,0 +1,484 @@
+/*
+ * DeltaMetrics visual refresh
+ * Direction inspired by the light SaaS language of Convox + Callivio:
+ * quiet white surfaces, minimal chrome, large type, soft blue/lime accents,
+ * thin separators and mobile-first app rhythm.
+ */
+
+:root {
+  --ink: #11161a;
+  --muted: #7d858d;
+  --line: #e7eaed;
+  --paper: #f5f6f6;
+  --card: rgba(255, 255, 255, .97);
+  --lime: #d8ff53;
+  --lime-dark: #8cae10;
+  --sky: #9bc8e5;
+  --sky-soft: #eaf5fb;
+  --surface-soft: #f0f2f2;
+}
+
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.app-shell {
+  grid-template-columns: 232px minmax(0, 1fr);
+  background: var(--paper);
+}
+
+.sidebar {
+  width: 232px;
+  padding: 22px 14px 18px;
+  background: rgba(250, 251, 251, .94);
+  border-right: 1px solid #e9ecee;
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  padding: 0 9px 25px;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 650;
+  letter-spacing: -.045em;
+}
+
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  transform: none;
+  background: #121619;
+  box-shadow: none;
+}
+
+.brand-mark .delta-mark {
+  color: var(--lime);
+  transform: none;
+  font-size: 15px;
+}
+
+.primary-nav {
+  border-bottom-color: #e9ecee;
+  gap: 2px;
+}
+
+.nav-label {
+  margin: 18px 11px 8px;
+  color: #a0a6ab;
+  font-size: 9px;
+  letter-spacing: .14em;
+}
+
+.nav-item {
+  min-height: 38px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  color: #737b82;
+  font-size: 12px;
+  transition: background .16s ease, color .16s ease;
+}
+
+.nav-item:hover {
+  transform: none;
+  background: #f1f3f3;
+  color: #161b1e;
+}
+
+.nav-item.active {
+  background: #edf0f0;
+  box-shadow: none;
+  color: #11161a;
+  font-weight: 620;
+}
+
+.nav-item.active .icon,
+.sidebar-note .icon {
+  color: #7f9c11;
+}
+
+.nav-item em {
+  background: transparent;
+  color: #adb3b7;
+  padding-right: 2px;
+}
+
+.sidebar-note {
+  background: #f0f3f2;
+  border-color: #e4e8e6;
+  border-radius: 13px;
+  padding: 11px;
+}
+
+.workspace {
+  grid-column: 2;
+  padding: 24px 32px 40px;
+}
+
+.topbar {
+  min-height: 76px;
+  margin-bottom: 13px;
+}
+
+.eyebrow {
+  color: #9aa1a7;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: .12em;
+}
+
+h1 {
+  font-size: clamp(27px, 2.35vw, 36px);
+  line-height: .98;
+  letter-spacing: -.055em;
+  font-weight: 560;
+}
+
+.icon-button,
+.drawer-close {
+  width: 38px;
+  height: 38px;
+  border-color: #e5e8ea;
+  border-radius: 11px;
+  background: #fff;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: #11161a;
+}
+
+.toolbar {
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.search,
+.filter-button,
+.upload-button,
+.secondary-button {
+  height: 40px;
+  border-radius: 11px;
+}
+
+.search {
+  width: min(360px, 34vw);
+  border-color: #e5e8ea;
+  background: #fff;
+  color: #939aa0;
+}
+
+.search:focus-within {
+  border-color: #a5cee7;
+  box-shadow: 0 0 0 4px rgba(155, 200, 229, .15);
+}
+
+.search kbd {
+  border-color: #e8ebed;
+  background: #f5f6f6;
+}
+
+.filter-button,
+.secondary-button {
+  border-color: #e5e8ea;
+  background: #fff;
+}
+
+.filter-button.active {
+  border-color: #bfd8e8;
+  background: #eef7fc;
+}
+
+.filter-button.active .toggle-dot {
+  background: #6ea9cf;
+  box-shadow: 0 0 0 4px rgba(110, 169, 207, .12);
+}
+
+.upload-button {
+  background: #11161a;
+  border-color: #11161a;
+  box-shadow: none;
+}
+
+.upload-button .icon {
+  color: var(--lime);
+}
+
+.legend {
+  color: #949ba1;
+}
+
+.matrix-card,
+.profile-card,
+.document-card,
+.settings-view,
+.profile-hero {
+  border-color: #e7eaec;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(20, 26, 30, .035);
+}
+
+.matrix-card {
+  border-radius: 17px;
+}
+
+.matrix-meta {
+  height: 38px;
+  padding: 0 16px;
+  border-bottom-color: #eceeef;
+  color: #9ba2a7;
+  letter-spacing: .075em;
+}
+
+th,
+td {
+  height: 46px;
+  border-bottom-color: #eef0f1;
+  border-right-color: #f1f2f3;
+  background: #fff;
+}
+
+thead th {
+  height: 52px;
+  background: rgba(248, 249, 249, .97);
+  color: #747c82;
+  backdrop-filter: blur(12px);
+}
+
+thead th span {
+  color: #262c30;
+  font-weight: 590;
+}
+
+.sticky-col {
+  box-shadow: 12px 0 24px -24px rgba(17, 22, 26, .7);
+}
+
+.category-row td,
+.category-row .sticky-col {
+  background: #f3f5f5;
+  border-color: #e8ebec;
+}
+
+.category-row button {
+  font-size: 9px;
+  letter-spacing: .045em;
+  color: #5f686f;
+}
+
+.data-row:hover td,
+.data-row:hover .sticky-col {
+  background: #f7fbfd;
+}
+
+.data-row .indicator-col {
+  color: #343a3e;
+  font-weight: 500;
+}
+
+.data-row .indicator-col .icon {
+  color: #6da4c6;
+}
+
+.value-pill {
+  min-height: 26px;
+  border-radius: 7px;
+}
+
+.value-pill.normal {
+  background: #f0f7e8;
+  color: #607d22;
+}
+
+.value-pill.warning {
+  background: #fff6df;
+  color: #936716;
+}
+
+.value-pill.danger {
+  background: #fff0ee;
+  color: #b64b42;
+}
+
+.scroll-hint {
+  background: #fafbfb;
+  color: #a5abb0;
+}
+
+.detail-drawer {
+  background: #fff;
+  box-shadow: -18px 0 50px rgba(17, 22, 26, .11);
+}
+
+.detail-drawer h2,
+.upload-modal h2 {
+  font-weight: 560;
+}
+
+.chart-grid {
+  stroke: #eaedef;
+  stroke-dasharray: 3 6;
+}
+
+.reference-box {
+  background: #f1f4f4;
+}
+
+.upload-modal {
+  background: #fff;
+  border: 1px solid #e7eaec;
+  box-shadow: 0 24px 70px rgba(17, 22, 26, .15);
+}
+
+.modal-icon {
+  background: var(--sky-soft);
+  color: #5e9fc8;
+}
+
+.dropzone {
+  background: #f7f8f8;
+  border-color: #d6dade;
+}
+
+.dropzone:hover {
+  border-color: #9bc8e5;
+  background: #f3f9fc;
+}
+
+.field-label input:focus {
+  border-color: #9bc8e5;
+  box-shadow: 0 0 0 4px rgba(155, 200, 229, .14);
+}
+
+.profile-hero {
+  background: linear-gradient(120deg, #fff 5%, #edf7fc 100%);
+  border-radius: 17px;
+}
+
+.profile-avatar {
+  border-radius: 20px;
+  background: #11161a;
+  box-shadow: none;
+}
+
+.profile-card {
+  border-radius: 16px;
+}
+
+/* Login follows the same calm SaaS language rather than a glowing health dashboard. */
+.auth-panel {
+  background: #fbfcfc;
+}
+
+.auth-visual {
+  background:
+    radial-gradient(circle at 68% 25%, rgba(216, 255, 83, .34), transparent 23%),
+    radial-gradient(circle at 32% 72%, rgba(155, 200, 229, .42), transparent 30%),
+    #eef1f1;
+}
+
+.auth-visual:before {
+  border-radius: 30px;
+  background: rgba(255, 255, 255, .64);
+  box-shadow: 0 28px 80px rgba(17, 22, 26, .09);
+}
+
+.visual-card {
+  border-color: rgba(255, 255, 255, .8);
+  background: rgba(255, 255, 255, .84);
+  border-radius: 17px;
+  box-shadow: 0 18px 42px rgba(17, 22, 26, .08);
+}
+
+.visual-orbit {
+  background: #11161a;
+  box-shadow: 0 18px 42px rgba(17, 22, 26, .13);
+}
+
+/* Mobile: closer to a focused web-app than a compressed desktop dashboard. */
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .sidebar {
+    width: 72px;
+  }
+
+  .workspace {
+    padding: 18px 18px 30px;
+  }
+}
+
+@media (max-width: 620px) {
+  html,
+  body {
+    background: #f7f8f8;
+  }
+
+  .workspace {
+    padding: 16px 12px 88px;
+  }
+
+  .topbar {
+    min-height: 62px;
+    margin-bottom: 10px;
+  }
+
+  .topbar h1 {
+    font-size: 28px;
+    font-weight: 560;
+  }
+
+  .sidebar {
+    inset: auto 12px 12px;
+    height: 60px;
+    padding: 7px;
+    border-radius: 19px;
+    border-color: #e1e5e7;
+    background: rgba(255, 255, 255, .94);
+    box-shadow: 0 12px 30px rgba(17, 22, 26, .10);
+    backdrop-filter: blur(22px);
+  }
+
+  .primary-nav .nav-item {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+  }
+
+  .primary-nav .nav-item.active {
+    background: #eef3f5;
+  }
+
+  .search {
+    height: 44px;
+    border-radius: 13px;
+  }
+
+  .filter-button,
+  .upload-button {
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .matrix-card {
+    border-radius: 15px;
+    box-shadow: none;
+  }
+
+  .profile-hero,
+  .profile-card,
+  .document-card {
+    border-radius: 15px;
+    box-shadow: none;
+  }
+
+  .auth-panel {
+    background: #fff;
+  }
+}
