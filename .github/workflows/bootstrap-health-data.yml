@@ -36,7 +36,9 @@ jobs:
           python -m pip install pandas numpy requests
 
       - name: Download and derive datasets
-        run: python data/scripts/bootstrap_open_data.py
+        run: |
+          python data/scripts/bootstrap_open_data.py
+          python data/scripts/bootstrap_fhir_bundles.py
 
       - name: Show generated footprint
         run: |
