@@ -242,6 +242,23 @@
 }
 .auth-screen .login-submit:hover { filter: brightness(.985); }
 
+.auth-screen .auth-demo-credentials {
+  margin: -4px 0 0;
+  color: #9aa5ad;
+  font-size: 11px;
+  font-weight: 350;
+  line-height: 1.5;
+  text-align: center;
+}
+.auth-screen .auth-demo-credentials span {
+  margin: 0 7px;
+  color: #c2c9ce;
+}
+.auth-screen .auth-demo-credentials code {
+  color: #6f7b83;
+  font: inherit;
+}
+
 /* Old technical footnote becomes the small account CTA in the top-right. */
 .auth-screen .auth-footnote {
   position: fixed;
