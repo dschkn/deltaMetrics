@@ -209,7 +209,7 @@ export default function Home() {
 
       <div className="matrix-card">
         <div className="table-scroll">
-          <table>
+          <table style={{ width: `${448 + dates.length * 88}px`, minWidth: `${448 + dates.length * 88}px` }}>
             <colgroup><col className="indicator-track"/><col className="unit-track"/>{dates.map((date) => <col className="date-track" key={date}/>)}<col className="reference-track"/></colgroup>
             <thead><tr><th className="sticky-col indicator-col">Показатель</th><th className="unit-col">Ед.</th>{dates.map((date) => <th key={date}><span>{date.slice(0, 5)}</span><small>{date.slice(-4)}</small></th>)}<th className="reference-col">Референс</th></tr></thead>
             <tbody>{visibleCategories.map((category) => <CategoryRows key={category.name} category={category} onSelect={setSelectedItem}/>)}</tbody>
