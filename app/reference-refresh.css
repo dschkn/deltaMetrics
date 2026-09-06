@@ -54,7 +54,7 @@
 .workspace .upload-button { padding-inline:10px; }
 .workspace .matrix-card { border-radius:6px; }
 .workspace .table-scroll { height:calc(100vh - 146px); max-height:none; overflow:scroll; overscroll-behavior:contain; }
-.workspace .table-scroll table { min-width:max-content; }
+.workspace .table-scroll table { table-layout:fixed; }
 .workspace .indicator-track { width:220px; }
 .workspace .date-track { width:88px; }
 .workspace .reference-track { width:170px; }
