@@ -55,8 +55,9 @@ thead th span { display:block; font-size:11px; color:#303a34; } thead th small {
 .chevron { display:inline-grid; transition:.18s; } .chevron.open { transform:rotate(90deg); }
 .data-row { cursor:pointer; } .data-row td { transition:background .14s; } .data-row:hover td,.data-row:hover .sticky-col { background:#fbfff5; }
 .indicator-col { min-width:250px; max-width:250px; }
-.data-row .indicator-col { display:flex; align-items:center; gap:8px; text-align:left; font-weight:510; color:#37413b; }
-.data-row .indicator-col span { flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.data-row .indicator-col { text-align:left; font-weight:510; color:#37413b; }
+.indicator-content { display:flex; align-items:center; gap:8px; min-width:0; }
+.data-row .indicator-content span { flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .data-row .indicator-col .icon { opacity:0; color:var(--lime-dark); transition:.14s; } .data-row:hover .indicator-col .icon { opacity:1; }
 .value-pill { min-height:25px; min-width:48px; padding:5px 7px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; line-height:1.1; }
 .value-pill.normal { background:#eff9e5; color:#507c1e; } .value-pill.warning { background:#fff5d8; color:#9a6811; } .value-pill.danger { background:#ffebe8; color:#b7433b; font-weight:650; }
