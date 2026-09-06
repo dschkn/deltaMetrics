@@ -12,6 +12,7 @@ const SESSION_KEY = "deltametrics.demo-session";
 
 const short: Record<string, string> = {
   "Общий анализ мочи": "Моча",
+  "ПЦР отделяемого уретры": "ПЦР",
   "Общий анализ крови": "Кровь",
   "Биохимический анализ крови": "Биохимия",
   "Липидный профиль": "Липиды",
@@ -26,11 +27,13 @@ const short: Record<string, string> = {
   "Рентген / флюорография органов грудной клетки": "Рентген / ФЛГ",
   "InBody - состав тела": "InBody",
   "InBody - сегментарный анализ": "InBody · сегменты",
+  "Позвоночник / опорно-двигательная система": "Позвоночник",
+  "Психометрический скрининг / HADS": "HADS",
 };
 
 const totalIndicators = healthCategories.reduce((sum, category) => sum + category.items.length, 0);
 const totalDocuments = sourceDocuments.length;
-const lastUpdateLabel = "12 августа 2026";
+const lastUpdateLabel = "15 августа 2026";
 
 function Icon({ name, size = 18 }: { name: "grid" | "search" | "upload" | "filter" | "chevron" | "chart" | "close" | "more" | "shield" | "file" | "settings" | "plus" | "user" | "logout" | "lock"; size?: number }) {
   const paths: Record<string, React.ReactNode> = {
@@ -151,7 +154,6 @@ export default function Home() {
     }) }))
     .filter((category) => category.items.length > 0), [activeCategory, query, outliersOnly]);
 
-  const visibleCount = visibleCategories.reduce((sum, category) => sum + category.items.length, 0);
   const pageTitle = view === "documents" ? "Документы" : view === "profile" ? "Профиль" : view === "settings" ? "Настройки справочника" : activeCategory === "Все результаты" ? "Все результаты" : short[activeCategory];
 
   const signOut = () => {
@@ -187,8 +189,8 @@ export default function Home() {
     </aside>
 
     <section className="workspace">
-      <header className="topbar">
-        <div><p className="eyebrow">Демонстрационный архив</p><h1>{pageTitle}</h1></div>
+      <header className={view === "results" ? "topbar results-topbar" : "topbar"}>
+        <div><p className="eyebrow">Личный медицинский архив</p><h1>{pageTitle}</h1></div>
         <div className="header-actions"><button className="icon-button" aria-label="Дополнительные действия"><Icon name="more"/></button><button className="avatar" onClick={() => setView("profile")} aria-label="Открыть демонстрационный профиль">DM</button></div>
       </header>
 
@@ -199,15 +201,13 @@ export default function Home() {
         {healthCategories.map((category) => <button key={category.name} className={activeCategory === category.name ? "nav-item active" : "nav-item"} onClick={() => setActiveCategory(category.name)}><span>{short[category.name] ?? category.name}</span><em>{category.items.length}</em></button>)}
       </nav>
       <div className="toolbar">
-        <label className="search"><Icon name="search"/><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Найти показатель" aria-label="Найти показатель"/><kbd>⌘ K</kbd></label>
+        <label className="search"><Icon name="search"/><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Найти показатель" aria-label="Найти показатель"/></label>
         <button className={outliersOnly ? "filter-button active" : "filter-button"} onClick={() => setOutliersOnly((value) => !value)}><Icon name="filter"/>Отклонения<span className="toggle-dot"/></button>
         <div className="toolbar-spacer"/>
-        <div className="legend"><span><i className="dot normal"/>в норме</span><span><i className="dot warning"/>погранично</span><span><i className="dot danger"/>вне нормы</span></div>
         <button className="upload-button" onClick={() => setUploadOpen(true)}><Icon name="upload"/>Загрузить PDF</button>
       </div>
 
       <div className="matrix-card">
-        <div className="matrix-meta"><span>{visibleCount} показателей</span><span>{dates.length} даты</span><span>обновлено {lastUpdateLabel}</span></div>
         <div className="table-scroll">
           <table>
             <colgroup><col className="indicator-track"/><col className="unit-track"/>{dates.map((date) => <col className="date-track" key={date}/>)}<col className="reference-track"/></colgroup>
@@ -215,7 +215,6 @@ export default function Home() {
             <tbody>{visibleCategories.map((category) => <CategoryRows key={category.name} category={category} onSelect={setSelectedItem}/>)}</tbody>
           </table>
         </div>
-        <div className="scroll-hint"><span>←</span> горизонтальная шкала времени <span>→</span></div>
       </div></>}
 
       {view === "documents" && <DocumentsView onUpload={() => setUploadOpen(true)}/>}
