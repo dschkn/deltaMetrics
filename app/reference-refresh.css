@@ -43,6 +43,95 @@
 .table-scroll .value-pill { min-height: 18px; padding: 2px 5px; border-radius: 5px; }
 .scroll-hint { height: 22px; padding: 4px 10px; font-size: 8px; }
 
+.workspace .results-topbar { min-height:42px; margin-bottom:6px; }
+.workspace .results-topbar .eyebrow { display:none; }
+.workspace .results-topbar h1 { font-size:24px; }
+.workspace .category-nav { height:33px; margin-bottom:6px; padding-bottom:2px; }
+.workspace .category-nav .nav-item { min-height:29px; padding-inline:9px; border-radius:6px; font-size:9px; }
+.workspace .toolbar { min-height:32px; margin-bottom:6px; }
+.workspace .search, .workspace .filter-button, .workspace .upload-button { height:31px; }
+.workspace .search { width:min(270px,29vw); }
+.workspace .upload-button { padding-inline:10px; }
+.workspace .matrix-card { border-radius:6px; }
+.workspace .table-scroll { height:calc(100vh - 146px); max-height:none; overflow:scroll; overscroll-behavior:contain; }
+.workspace .table-scroll table { min-width:max-content; }
+.workspace .indicator-track { width:220px; }
+.workspace .date-track { width:88px; }
+.workspace .reference-track { width:170px; }
+.workspace .table-scroll .sticky-col, .workspace .table-scroll .indicator-col { min-width:220px; max-width:220px; }
+.workspace .table-scroll .unit-col { left:220px; }
+.workspace .table-scroll th, .workspace .table-scroll td { min-width:88px; height:29px; padding:3px 7px; font-size:8px; }
+.workspace .table-scroll thead th { height:34px; }
+.workspace .table-scroll .category-row td, .workspace .table-scroll .category-row .sticky-col, .workspace .table-scroll .category-row button { height:24px; }
+.workspace .table-scroll .reference-col { min-width:170px; max-width:170px; }
+
+@media (max-width:620px) {
+  .table-scroll { height:calc(100vh - 190px); }
+  .indicator-track { width:174px; }
+  .table-scroll .sticky-col, .table-scroll .indicator-col { min-width:174px; max-width:174px; }
+  .table-scroll .unit-col { left:174px; }
+}
+
+/* Results view follows the spreadsheet: controls stay compact, data owns the screen. */
+.results-topbar {
+  min-height: 42px;
+  margin-bottom: 6px;
+}
+.results-topbar .eyebrow { display: none; }
+.results-topbar h1 { font-size: 24px; }
+.category-nav {
+  height: 33px;
+  margin-bottom: 6px;
+  padding-bottom: 2px;
+}
+.category-nav .nav-item {
+  min-height: 29px;
+  padding-inline: 9px;
+  border-radius: 6px;
+  font-size: 9px;
+}
+.toolbar {
+  min-height: 32px;
+  margin-bottom: 6px;
+}
+.search, .filter-button, .upload-button { height: 31px; }
+.search { width: min(270px, 29vw); }
+.upload-button { padding-inline: 10px; }
+.matrix-card { border-radius: 6px; }
+.table-scroll {
+  height: calc(100vh - 146px);
+  max-height: none;
+  overflow: scroll;
+  overscroll-behavior: contain;
+}
+.table-scroll table { min-width: max-content; }
+.indicator-track { width: 220px; }
+.date-track { width: 88px; }
+.reference-track { width: 170px; }
+.table-scroll .sticky-col, .table-scroll .indicator-col {
+  min-width: 220px;
+  max-width: 220px;
+}
+.table-scroll .unit-col { left: 220px; }
+.table-scroll th, .table-scroll td {
+  min-width: 88px;
+  height: 29px;
+  padding: 3px 7px;
+  font-size: 8px;
+}
+.table-scroll thead th { height: 34px; }
+.table-scroll .category-row td,
+.table-scroll .category-row .sticky-col,
+.table-scroll .category-row button { height: 24px; }
+.table-scroll .reference-col { min-width: 170px; max-width: 170px; }
+
+@media (max-width: 620px) {
+  .table-scroll { height: calc(100vh - 190px); }
+  .indicator-track { width: 174px; }
+  .table-scroll .sticky-col, .table-scroll .indicator-col { min-width:174px; max-width:174px; }
+  .table-scroll .unit-col { left:174px; }
+}
+
 /* ---------- Results table geometry + profile dashboard ---------- */
 .table-scroll table { table-layout: fixed; }
 .indicator-track { width:238px; }
