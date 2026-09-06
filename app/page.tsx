@@ -210,6 +210,7 @@ export default function Home() {
         <div className="matrix-meta"><span>{visibleCount} показателей</span><span>{dates.length} даты</span><span>обновлено {lastUpdateLabel}</span></div>
         <div className="table-scroll">
           <table>
+            <colgroup><col className="indicator-track"/><col className="unit-track"/>{dates.map((date) => <col className="date-track" key={date}/>)}<col className="reference-track"/></colgroup>
             <thead><tr><th className="sticky-col indicator-col">Показатель</th><th className="unit-col">Ед.</th>{dates.map((date) => <th key={date}><span>{date.slice(0, 5)}</span><small>{date.slice(-4)}</small></th>)}<th className="reference-col">Референс</th></tr></thead>
             <tbody>{visibleCategories.map((category) => <CategoryRows key={category.name} category={category} onSelect={setSelectedItem}/>)}</tbody>
           </table>
@@ -231,17 +232,28 @@ export default function Home() {
 }
 
 function ProfileView({ onSignOut }: { onSignOut: () => void }) {
+  const recordedValues = healthCategories.reduce((sum, category) => sum + category.items.reduce((itemSum, item) => itemSum + item.values.filter(Boolean).length, 0), 0);
+  const possibleValues = totalIndicators * dates.length;
+  const archiveCoverage = Math.round((recordedValues / possibleValues) * 100);
+  const flaggedValues = healthCategories.reduce((sum, category) => sum + category.items.reduce((itemSum, item) => itemSum + item.values.filter((value, index) => value && ["warning", "danger"].includes(cellStatus(value, item.reference, dates[index]))).length, 0), 0);
+
   return <section className="profile-view">
-    <div className="profile-hero">
-      <div className="profile-avatar">DM</div>
-      <div className="profile-identity"><p className="eyebrow">Демо-профиль</p><h2>DeltaMetrics User</h2><span>Публичные тестовые данные</span></div>
-      <button className="secondary-button profile-edit">Редактировать профиль</button>
-    </div>
-    <div className="profile-grid">
-      <article className="profile-card identity-card"><p className="eyebrow">Основные данные</p><dl><div><dt>Режим</dt><dd>Demo</dd></div><div><dt>Персональные данные</dt><dd>Не загружены</dd></div><div><dt>Источник</dt><dd>Fixtures</dd></div><div><dt>Язык</dt><dd>Русский</dd></div></dl></article>
-      <article className="profile-card archive-card"><p className="eyebrow">Архив</p><div className="profile-stats"><div><strong>{totalIndicators}</strong><span>показателей</span></div><div><strong>{dates.length}</strong><span>даты</span></div><div><strong>{totalDocuments}</strong><span>документов</span></div></div><p className="profile-muted">Последнее обновление: {lastUpdateLabel}</p></article>
-      <article className="profile-card access-card"><span className="modal-icon"><Icon name="shield" size={22}/></span><div><p className="eyebrow">Доступ</p><h3>Без персональных данных</h3><p>В git хранится только демонстрационный набор. Настоящие профили, сессии и медицинские данные будут загружаться из защищённого backend API.</p></div></article>
-      <article className="profile-card account-card"><div><p className="eyebrow">Учётная запись</p><h3>demo</h3><p>Локальная демонстрационная сессия</p></div><button className="signout-button" onClick={onSignOut}><Icon name="logout" size={17}/>Выйти</button></article>
+    <div className="profile-dashboard">
+      <article className="profile-card profile-main-card">
+        <div className="profile-card-head"><span>Личный профиль</span><button className="icon-button" aria-label="Настройки профиля"><Icon name="more"/></button></div>
+        <div className="profile-monogram" aria-hidden="true">Δ</div>
+        <div className="profile-identity"><p className="eyebrow">Владелец архива</p><h2>Дмитрий Щукин</h2><span>Персональная динамика здоровья · 2024—2026</span></div>
+        <div className="profile-statuses"><span><i/>Архив активен</span><span><Icon name="shield" size={14}/>Приватный доступ</span></div>
+        <div className="profile-timeline" aria-label={`Заполненность архива ${archiveCoverage}%`}><i style={{width: `${archiveCoverage}%`}}/></div>
+        <div className="profile-timeline-labels"><span>2024</span><b>{archiveCoverage}% данных</b><span>2026</span></div>
+        <div className="profile-main-actions"><button className="secondary-button profile-edit">Редактировать профиль</button><button className="signout-button" onClick={onSignOut}><Icon name="logout" size={16}/>Выйти</button></div>
+      </article>
+      <article className="profile-card profile-metric"><div className="profile-card-head"><span>Показатели</span><Icon name="chart" size={16}/></div><strong>{totalIndicators}</strong><p><i className="profile-dot lime"/>медицинских параметров</p><div className="metric-spark"><i/><i/><i/><i/><i/><i/></div></article>
+      <article className="profile-card profile-metric"><div className="profile-card-head"><span>Наблюдения</span><Icon name="grid" size={16}/></div><strong>{recordedValues}</strong><p><i className="profile-dot sky"/>значений в динамике</p><div className="metric-spark sky"><i/><i/><i/><i/><i/><i/></div></article>
+      <article className="profile-card profile-metric"><div className="profile-card-head"><span>Документы</span><Icon name="file" size={16}/></div><strong>{totalDocuments}</strong><p><i className="profile-dot dark"/>исходных исследований</p><div className="metric-spark dark"><i/><i/><i/><i/><i/><i/></div></article>
+      <article className="profile-card profile-coverage"><div className="profile-card-head"><span>Покрытие архива</span><span className="profile-period">2024—2026</span></div><div className="coverage-number"><strong>{archiveCoverage}</strong><span>%</span></div><div className="coverage-track"><i style={{width: `${archiveCoverage}%`}}/></div><div className="coverage-labels"><span>{recordedValues} значений внесено</span><span>{possibleValues - recordedValues} ячеек свободно</span></div></article>
+      <article className="profile-card profile-attention"><div className="profile-card-head"><span>Требуют внимания</span><Icon name="more" size={17}/></div><div className="attention-ring"><strong>{flaggedValues}</strong><span>значений</span></div><div className="attention-legend"><span><i className="profile-dot lime"/>в пределах нормы</span><span><i className="profile-dot warning"/>пограничные и выше</span></div></article>
+      <article className="profile-card profile-summary"><div><p className="eyebrow">Структура архива</p><h3>{healthCategories.length} медицинских разделов</h3><span>Последнее обновление · {lastUpdateLabel}</span></div><div className="summary-bars">{healthCategories.slice(0, 10).map((category, index) => <i key={category.name} style={{height: `${28 + ((category.items.length * 13 + index * 7) % 56)}%`}} title={category.name}/>)}</div><button className="secondary-button">Управление данными</button></article>
     </div>
   </section>;
 }
