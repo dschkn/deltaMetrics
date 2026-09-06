@@ -27,6 +27,22 @@
   --radius: 9px;
 }
 
+/* Dense spreadsheet mode: keep the data readable without wasting vertical space. */
+.matrix-meta { display: none; }
+.table-scroll {
+  overflow-x: scroll;
+  scrollbar-width: auto;
+  scrollbar-color: #9da8a6 #e8edeb;
+}
+.table-scroll::-webkit-scrollbar { width: 10px; height: 10px; }
+.table-scroll::-webkit-scrollbar-track { background: #e8edeb; border-radius: 6px; }
+.table-scroll::-webkit-scrollbar-thumb { background: #9da8a6; border: 2px solid #e8edeb; border-radius: 6px; }
+.table-scroll th, .table-scroll td { height: 32px; padding: 4px 8px; }
+.table-scroll thead th { height: 38px; padding-top: 6px; padding-bottom: 6px; }
+.table-scroll .category-row td, .table-scroll .category-row .sticky-col, .table-scroll .category-row button { height: 27px; }
+.table-scroll .value-pill { min-height: 18px; padding: 2px 5px; border-radius: 5px; }
+.scroll-hint { height: 22px; padding: 4px 10px; font-size: 8px; }
+
 /* ---------- Results table geometry + profile dashboard ---------- */
 .table-scroll table { table-layout: fixed; }
 .indicator-track { width:238px; }
@@ -911,3 +927,15 @@ thead th small {
     background: #f7f8f7;
   }
 }
+
+/* Dense spreadsheet mode: keep the data readable without wasting vertical space. */
+.matrix-meta { display: none !important; }
+.table-scroll { overflow-x: scroll; scrollbar-width: auto; scrollbar-color: #9da8a6 #e8edeb; }
+.table-scroll::-webkit-scrollbar { width: 10px; height: 10px; }
+.table-scroll::-webkit-scrollbar-track { background: #e8edeb; border-radius: 6px; }
+.table-scroll::-webkit-scrollbar-thumb { background: #9da8a6; border: 2px solid #e8edeb; border-radius: 6px; }
+.table-scroll th, .table-scroll td { height: 32px; padding: 4px 8px; }
+.table-scroll thead th { height: 38px; padding-top: 6px; padding-bottom: 6px; }
+.table-scroll .category-row td, .table-scroll .category-row .sticky-col, .table-scroll .category-row button { height: 27px; }
+.table-scroll .value-pill { min-height: 18px; padding: 2px 5px; border-radius: 5px; }
+.scroll-hint { height: 22px; padding: 4px 10px; font-size: 8px; }
