@@ -107,6 +107,9 @@ function LoginScreen({ login, password, error, setLogin, setPassword, onSubmit }
         <label><span>Пароль</span><input autoComplete="current-password" type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Введите пароль"/></label>
         {error && <p className="login-error" role="alert">{error}</p>}
         <button className="login-submit" type="submit"><Icon name="lock" size={17}/>Войти</button>
+        <p className="auth-demo-credentials">
+          Тестовый логин: <code>{DEMO_USERNAME}</code><span aria-hidden="true">·</span>Тестовый пароль: <code>{DEMO_PASSWORD}</code>
+        </p>
       </form>
       <p className="auth-footnote">demo fixtures · server authentication will be added next</p>
     </section>
@@ -180,11 +183,6 @@ export default function Home() {
         <button className={view === "profile" ? "nav-item active" : "nav-item"} onClick={() => setView("profile")}><Icon name="user"/><span>Профиль</span></button>
         <button className={view === "settings" ? "nav-item active" : "nav-item"} onClick={() => setView("settings")}><Icon name="settings"/><span>Настройки</span></button>
       </nav>
-      {view === "results" && <nav className="category-nav" aria-label="Категории анализов">
-        <p className="nav-label">категории</p>
-        <button className={activeCategory === "Все результаты" ? "nav-item active" : "nav-item"} onClick={() => setActiveCategory("Все результаты")}><span>Все результаты</span><em>{healthCategories.reduce((sum, c) => sum + c.items.length, 0)}</em></button>
-        {healthCategories.map((category) => <button key={category.name} className={activeCategory === category.name ? "nav-item active" : "nav-item"} onClick={() => setActiveCategory(category.name)}><span>{short[category.name] ?? category.name}</span><em>{category.items.length}</em></button>)}
-      </nav>}
       <div className="sidebar-note"><Icon name="shield"/><div><b>Личный архив</b><span>данные хранятся приватно</span></div></div>
     </aside>
 
@@ -194,7 +192,13 @@ export default function Home() {
         <div className="header-actions"><button className="icon-button" aria-label="Дополнительные действия"><Icon name="more"/></button><button className="avatar" onClick={() => setView("profile")} aria-label="Открыть демонстрационный профиль">DM</button></div>
       </header>
 
-      {view === "results" && <><div className="toolbar">
+      {view === "results" && <>
+      <nav className="category-nav" aria-label="Категории анализов">
+        <p className="nav-label">категории</p>
+        <button className={activeCategory === "Все результаты" ? "nav-item active" : "nav-item"} onClick={() => setActiveCategory("Все результаты")}><span>Все результаты</span><em>{healthCategories.reduce((sum, c) => sum + c.items.length, 0)}</em></button>
+        {healthCategories.map((category) => <button key={category.name} className={activeCategory === category.name ? "nav-item active" : "nav-item"} onClick={() => setActiveCategory(category.name)}><span>{short[category.name] ?? category.name}</span><em>{category.items.length}</em></button>)}
+      </nav>
+      <div className="toolbar">
         <label className="search"><Icon name="search"/><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Найти показатель" aria-label="Найти показатель"/><kbd>⌘ K</kbd></label>
         <button className={outliersOnly ? "filter-button active" : "filter-button"} onClick={() => setOutliersOnly((value) => !value)}><Icon name="filter"/>Отклонения<span className="toggle-dot"/></button>
         <div className="toolbar-spacer"/>
@@ -279,5 +283,5 @@ function SettingsView({ selected, setSelected, customCategories, customItems, on
 
 function CategoryRows({ category, onSelect }: { category: { name: string; items: HealthItem[] }; onSelect: (item: HealthItem) => void }) {
   const [open, setOpen] = useState(true);
-  return <><tr className="category-row"><td className="sticky-col" colSpan={2}><button onClick={() => setOpen((value) => !value)}><span className={open ? "chevron open" : "chevron"}><Icon name="chevron" size={15}/></span>{category.name}<em>{category.items.length}</em></button></td><td colSpan={dates.length + 1}/></tr>{open && category.items.map((item) => <tr className="data-row" key={`${category.name}-${item.name}`} onClick={() => onSelect(item)}><td className="sticky-col indicator-col"><span>{item.name}</span><Icon name="chart" size={15}/></td><td className="unit-col">{item.unit || "—"}</td>{item.values.map((value, index) => <td key={dates[index]}><span className={`value-pill ${cellStatus(value, item.reference, dates[index])}`}>{value ?? ""}</span></td>)}<td className="reference-col"><span title={item.reference}>{item.reference || "—"}</span></td></tr>)}</>;
+  return <><tr className="category-row"><td className="sticky-col"><button onClick={() => setOpen((value) => !value)}><span className={open ? "chevron open" : "chevron"}><Icon name="chevron" size={15}/></span>{category.name}<em>{category.items.length}</em></button></td><td className="unit-col"/><td colSpan={dates.length + 1}/></tr>{open && category.items.map((item) => <tr className="data-row" key={`${category.name}-${item.name}`} onClick={() => onSelect(item)}><td className="sticky-col indicator-col"><div className="indicator-content"><span>{item.name}</span><Icon name="chart" size={15}/></div></td><td className="unit-col">{item.unit || "—"}</td>{item.values.map((value, index) => <td key={dates[index]}><span className={`value-pill ${cellStatus(value, item.reference, dates[index])}`}>{value ?? ""}</span></td>)}<td className="reference-col"><span title={item.reference}>{item.reference || "—"}</span></td></tr>)}</>;
 }
