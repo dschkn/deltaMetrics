@@ -1,0 +1,58 @@
+/*
+ * Login positioning hotfix.
+ * backdrop-filter on the legacy auth panel creates a containing block for
+ * fixed descendants, which trapped the page-level logo, hero and account CTA
+ * inside the login card. Keep the card visually flat and let fixed children
+ * position against the viewport again.
+ */
+
+.auth-screen .auth-panel {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  transform: none !important;
+  filter: none !important;
+  perspective: none !important;
+  contain: none !important;
+}
+
+/* Keep the intended login composition above legacy auth rules. */
+.auth-screen .auth-brand {
+  position: fixed !important;
+  top: 36px !important;
+  left: clamp(46px, 6vw, 96px) !important;
+}
+
+.auth-screen .auth-copy {
+  position: fixed !important;
+  left: clamp(46px, 6vw, 96px) !important;
+  top: 50% !important;
+  width: min(720px, 47vw) !important;
+  transform: translateY(-47%) !important;
+}
+
+.auth-screen .auth-footnote {
+  position: fixed !important;
+  top: 33px !important;
+  right: clamp(46px, 5vw, 82px) !important;
+  left: auto !important;
+  bottom: auto !important;
+}
+
+.auth-screen .auth-panel .login-form {
+  position: static !important;
+}
+
+@media (max-width: 1080px) {
+  .auth-screen .auth-brand { left: 34px !important; }
+  .auth-screen .auth-copy { left: 34px !important; width: 46vw !important; }
+  .auth-screen .auth-footnote { right: 34px !important; }
+}
+
+@media (max-width: 760px) {
+  .auth-screen .auth-brand {
+    top: 24px !important;
+    left: 22px !important;
+  }
+  .auth-screen .auth-copy { display: none !important; }
+  .auth-screen .auth-footnote { display: none !important; }
+}
