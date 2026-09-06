@@ -1,0 +1,324 @@
+/* Login screen: strict Convox/Callivio-inspired direction */
+
+.auth-screen {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1.42fr) minmax(520px, .86fr);
+  gap: clamp(36px, 5vw, 92px);
+  padding: 132px clamp(46px, 6vw, 96px) 56px;
+  background:
+    radial-gradient(circle at 72% 14%, rgba(201, 222, 233, .14), transparent 31%),
+    radial-gradient(circle at 18% 66%, rgba(218, 255, 83, .055), transparent 27%),
+    #f3f6f7;
+  color: #17191b;
+  font-family: "Helvetica Neue", var(--font-geist-sans), Arial, sans-serif;
+  font-weight: 300;
+}
+
+.auth-screen .auth-ambient { display: none; }
+
+.auth-screen .auth-panel {
+  grid-column: 2;
+  position: relative;
+  align-self: center;
+  width: min(100%, 620px);
+  min-height: 650px;
+  padding: 184px 62px 54px;
+  border: 1px solid rgba(111, 124, 132, .13);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .76);
+  box-shadow: 0 20px 60px rgba(29, 43, 51, .035);
+  backdrop-filter: blur(12px);
+}
+
+/* Brand becomes a page-level header item. */
+.auth-screen .auth-brand {
+  position: fixed;
+  z-index: 4;
+  top: 36px;
+  left: clamp(46px, 6vw, 96px);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0;
+  color: #1a1c1e;
+}
+
+.auth-screen .auth-brand > span:last-child {
+  font-size: 0;
+}
+.auth-screen .auth-brand > span:last-child::after {
+  content: "deltaMetrics";
+  font-size: 29px;
+  line-height: 1;
+  font-weight: 300;
+  letter-spacing: -.045em;
+}
+
+.auth-screen .brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  transform: none;
+  box-shadow: none;
+  background: linear-gradient(135deg, #dfff5d, #f0ff9c);
+  color: #fff;
+}
+.auth-screen .brand-mark .delta-mark {
+  color: #fff;
+  transform: none;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+/* Existing visual container is repurposed as the quiet top navigation. */
+.auth-screen .auth-visual {
+  position: fixed;
+  z-index: 4;
+  top: 39px;
+  left: 50%;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  transform: translateX(-50%);
+  background: transparent;
+}
+.auth-screen .auth-visual::before {
+  content: "Возможности     Для клиник     О сервисе     Контакты";
+  position: static;
+  display: block;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+  backdrop-filter: none;
+  color: #8d98a2;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.4;
+  letter-spacing: -.015em;
+  white-space: pre;
+}
+.auth-screen .auth-visual > * { display: none !important; }
+
+/* Left hero. */
+.auth-screen .auth-copy {
+  position: fixed;
+  left: clamp(46px, 6vw, 96px);
+  top: 50%;
+  width: min(720px, 47vw);
+  transform: translateY(-47%);
+  color: #17191b;
+}
+.auth-screen .auth-copy .eyebrow { display: none; }
+.auth-screen .auth-copy h1 {
+  margin: 0;
+  font-size: 0;
+}
+.auth-screen .auth-copy h1::before {
+  content: "Понимайте\Aсвое здоровье";
+  white-space: pre;
+  display: block;
+  color: #17191b;
+  font-size: clamp(62px, 5.2vw, 88px);
+  line-height: .98;
+  font-weight: 430;
+  letter-spacing: -.065em;
+}
+.auth-screen .auth-copy > p:last-child {
+  max-width: 550px;
+  margin: 28px 0 0;
+  color: #98a4ae;
+  font-size: clamp(20px, 1.55vw, 27px);
+  line-height: 1.36;
+  font-weight: 300;
+  letter-spacing: -.035em;
+}
+.auth-screen .auth-copy > p:last-child {
+  font-size: 0;
+}
+.auth-screen .auth-copy > p:last-child::after {
+  content: "Аналитика, которая помогает\Aпринимать лучшие решения.";
+  white-space: pre;
+  font-size: clamp(20px, 1.55vw, 27px);
+}
+
+/* Login heading is generated from the form, leaving the old marketing copy hidden. */
+.auth-screen .login-form {
+  position: static;
+  display: grid;
+  gap: 18px;
+}
+.auth-screen .login-form::before {
+  content: "Добро пожаловать\Aв deltaMetrics";
+  white-space: pre;
+  position: absolute;
+  top: 62px;
+  left: 62px;
+  right: 62px;
+  color: #17191b;
+  font-size: 47px;
+  line-height: 1.02;
+  font-weight: 300;
+  letter-spacing: -.055em;
+}
+.auth-screen .login-form::after {
+  content: "Войдите в свой аккаунт";
+  position: absolute;
+  top: 150px;
+  left: 62px;
+  color: #99a5af;
+  font-size: 19px;
+  font-weight: 300;
+  letter-spacing: -.025em;
+}
+
+.auth-screen .login-form label {
+  display: grid;
+  gap: 9px;
+  color: #222629;
+  font-size: 15px;
+  font-weight: 350;
+}
+.auth-screen .login-form label:first-of-type > span {
+  font-size: 0;
+}
+.auth-screen .login-form label:first-of-type > span::after {
+  content: "Email";
+  font-size: 15px;
+}
+
+.auth-screen .login-form input {
+  width: 100%;
+  height: 58px;
+  padding: 0 18px;
+  border: 1px solid #dfe5e8;
+  border-radius: 12px;
+  outline: 0;
+  background: rgba(255,255,255,.62);
+  color: #24282b;
+  font: 300 16px/1 "Helvetica Neue", var(--font-geist-sans), Arial, sans-serif;
+  transition: border-color .16s ease, box-shadow .16s ease, background .16s ease;
+}
+.auth-screen .login-form input:focus {
+  border-color: #c7d8df;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(182, 205, 215, .12);
+}
+.auth-screen .login-form input::placeholder { color: #b7c0c8; }
+
+.auth-screen .login-error {
+  margin: -5px 0 0;
+  color: #ae554d;
+  font-size: 13px;
+  font-weight: 350;
+}
+
+.auth-screen .login-submit {
+  position: relative;
+  height: 62px;
+  margin-top: 14px;
+  border: 0;
+  border-radius: 11px;
+  background: linear-gradient(100deg, #ddff64, #efff9b);
+  color: #151719;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  cursor: pointer;
+  font: 350 18px/1 "Helvetica Neue", var(--font-geist-sans), Arial, sans-serif;
+  box-shadow: none;
+}
+.auth-screen .login-submit .icon { display: none; }
+.auth-screen .login-submit::after {
+  content: "→";
+  font-size: 23px;
+  font-weight: 300;
+  transform: translateY(-1px);
+}
+.auth-screen .login-submit:hover { filter: brightness(.985); }
+
+/* Old technical footnote becomes the small account CTA in the top-right. */
+.auth-screen .auth-footnote {
+  position: fixed;
+  z-index: 5;
+  top: 33px;
+  right: clamp(46px, 5vw, 82px);
+  left: auto;
+  bottom: auto;
+  margin: 0;
+  color: transparent;
+  font-size: 0;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.auth-screen .auth-footnote::before {
+  content: "Нет аккаунта?";
+  color: #8e9aa4;
+  font-size: 15px;
+  font-weight: 300;
+  margin-right: 18px;
+}
+.auth-screen .auth-footnote::after {
+  content: "Создать аккаунт";
+  display: inline-flex;
+  height: 48px;
+  padding: 0 22px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: #e8edef;
+  color: #25292c;
+  font-size: 15px;
+  font-weight: 350;
+}
+
+/* No circles, cards or decorative dashboard art on login. */
+.auth-screen .visual-card,
+.auth-screen .visual-orbit,
+.auth-screen .mini-bars { display: none !important; }
+
+@media (max-width: 1080px) {
+  .auth-screen {
+    grid-template-columns: 1fr minmax(440px, .9fr);
+    gap: 30px;
+    padding-inline: 34px;
+  }
+  .auth-screen .auth-brand { left: 34px; }
+  .auth-screen .auth-copy { left: 34px; width: 46vw; }
+  .auth-screen .auth-visual { display: none; }
+  .auth-screen .auth-footnote { right: 34px; }
+}
+
+@media (max-width: 760px) {
+  .auth-screen {
+    display: block;
+    padding: 104px 18px 34px;
+  }
+  .auth-screen .auth-brand { top: 24px; left: 22px; }
+  .auth-screen .auth-brand > span:last-child::after { font-size: 24px; }
+  .auth-screen .brand-mark { width: 32px; height: 32px; }
+  .auth-screen .auth-copy { display: none; }
+  .auth-screen .auth-footnote { display: none; }
+  .auth-screen .auth-panel {
+    width: 100%;
+    min-height: auto;
+    padding: 158px 22px 26px;
+    border-radius: 15px;
+  }
+  .auth-screen .login-form::before {
+    top: 42px;
+    left: 22px;
+    right: 22px;
+    font-size: 38px;
+  }
+  .auth-screen .login-form::after {
+    top: 119px;
+    left: 22px;
+    font-size: 16px;
+  }
+}
