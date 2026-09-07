@@ -1,3 +1,5 @@
+import { buildQuestionnaireHealthCategories } from "./questionnaire-health-data";
+
 export type HealthItem = {
   name: string;
   unit: string;
@@ -243,6 +245,7 @@ export const healthCategories: HealthCategory[] = [
     { name: "HADS — депрессия", unit: "баллов", values: [null,null,null,null,null,null,null,null,null,null,null,null,"20",null,null,null,null,null], reference: "0-7: норма; 8-10: субклинически; 11-21: клинически выражено" },
     { name: "Заключение специалиста", unit: "", values: [null,null,null,null,null,null,null,null,null,null,null,null,"R45.3 Деморализация и апатия",null,null,null,null,null], reference: "—" },
   ] },
+  ...buildQuestionnaireHealthCategories(dates.length),
 ];
 
 export const sourceDocuments = [
