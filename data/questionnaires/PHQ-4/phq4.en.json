@@ -1,0 +1,41 @@
+{
+  "id": "phq4-2009-en",
+  "name": "Patient Health Questionnaire-4",
+  "language": "en",
+  "version": "2009",
+  "status": "validated_screening",
+  "recallPeriodDays": 14,
+  "instructions": "Over the last 2 weeks, how often have you been bothered by the following problems?",
+  "responseScale": [
+    {"value": 0, "label": "Not at all"},
+    {"value": 1, "label": "Several days"},
+    {"value": 2, "label": "More than half the days"},
+    {"value": 3, "label": "Nearly every day"}
+  ],
+  "items": [
+    {"id": "GAD2_1", "domain": "anxiety", "text": "Feeling nervous, anxious, or on edge"},
+    {"id": "GAD2_2", "domain": "anxiety", "text": "Not being able to stop or control worrying"},
+    {"id": "PHQ2_1", "domain": "depression", "text": "Little interest or pleasure in doing things"},
+    {"id": "PHQ2_2", "domain": "depression", "text": "Feeling down, depressed, or hopeless"}
+  ],
+  "scoring": {
+    "requiresAllItems": true,
+    "totalRange": [0, 12],
+    "subscaleRange": [0, 6],
+    "severityBands": [
+      {"min": 0, "max": 2, "label": "normal"},
+      {"min": 3, "max": 5, "label": "mild"},
+      {"min": 6, "max": 8, "label": "moderate"},
+      {"min": 9, "max": 12, "label": "severe"}
+    ],
+    "subscaleFollowUpRule": "anxiety_sum >= 3 OR depression_sum >= 3",
+    "interpretation": "Screening only; a positive screen requires clinical assessment."
+  },
+  "schedule": {"defaultCadenceDays": 30, "doNotSplitOrRotateItems": true},
+  "source": {
+    "citation": "Kroenke K, Spitzer RL, Williams JBW, Lowe B. Psychosomatics. 2009;50(6):613-621.",
+    "validationUrl": "https://pubmed.ncbi.nlm.nih.gov/19996233/",
+    "rightsUrl": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer_to_offer_free_public_access_to_mental_health_assessment_tools_to_improve_diagnosis_and_patient_care",
+    "rights": "PHQ and GAD instruments made available without copyright restriction and without charge by Pfizer."
+  }
+}

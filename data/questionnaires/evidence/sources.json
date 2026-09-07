@@ -1,0 +1,69 @@
+{
+  "updated": "2026-09-07",
+  "sources": [
+    {
+      "id": "WHO5_2024",
+      "title": "The World Health Organization-Five Well-Being Index (WHO-5)",
+      "url": "https://www.who.int/publications/m/item/WHO-UCN-MSD-MHE-2024.01",
+      "type": "official_instrument",
+      "supports": ["items", "response_scale", "scoring", "license"]
+    },
+    {
+      "id": "PHQ4_2009",
+      "title": "An ultra-brief screening scale for anxiety and depression: the PHQ-4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19996233/",
+      "type": "validation_study",
+      "supports": ["instrument_structure", "validity", "severity_association"]
+    },
+    {
+      "id": "PHQ_RIGHTS_2010",
+      "title": "Pfizer to offer free public access to mental health assessment tools",
+      "url": "https://www.pfizer.com/news/press-release/press-release-detail/pfizer_to_offer_free_public_access_to_mental_health_assessment_tools_to_improve_diagnosis_and_patient_care",
+      "type": "rights_statement",
+      "supports": ["reproduction_without_copyright_restriction"]
+    },
+    {
+      "id": "PROMIS_TERMS_2026",
+      "title": "HealthMeasures Measure Library Terms of Use",
+      "url": "https://healthmeasures.net/select-measures/measure-library/",
+      "type": "terms",
+      "supports": ["do_not_redistribute", "app_integration_requires_permission", "do_not_translate_or_modify"]
+    },
+    {
+      "id": "HADS_RIGHTS",
+      "title": "Hospital Anxiety & Depression Scale",
+      "url": "https://www.gl-assessment.co.uk/products/hospital-anxiety-depression-scale/",
+      "type": "publisher_page",
+      "supports": ["licensed_instrument", "14_items", "do_not_bundle"]
+    },
+    {
+      "id": "WHO_FERRITIN_2020",
+      "title": "WHO guideline on use of ferritin concentrations to assess iron status in individuals and populations",
+      "url": "https://www.who.int/publications/i/item/9789240000124",
+      "type": "clinical_guideline",
+      "supports": ["adult_ferritin_cutoffs", "inflammation_adjustment"]
+    },
+    {
+      "id": "NIH_ODS_VITAMIN_D_2025",
+      "title": "Vitamin D: Health Professional Fact Sheet",
+      "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/",
+      "type": "official_evidence_summary",
+      "supports": ["25_oh_d_units", "deficiency_risk_threshold", "inadequacy_threshold", "uncertainty"]
+    },
+    {
+      "id": "VITAMIN_D_DEPRESSION_META_2013",
+      "title": "Serum 25-hydroxyvitamin D levels and the risk of depression: a systematic review and meta-analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23636546/",
+      "type": "systematic_review_meta_analysis",
+      "supports": ["inverse_association", "causality_not_established"],
+      "effect": "Adjusted pooled odds ratio 0.96 (95% CI 0.94-0.99) per 10 ng/mL increase in cross-sectional studies; 0.92 (95% CI 0.87-0.98) in cohort studies."
+    },
+    {
+      "id": "IRON_MENTAL_HEALTH_REVIEW_2013",
+      "title": "Iron deficiency, cognition, mental health and fatigue in women of childbearing age: a systematic review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4153327/",
+      "type": "systematic_review",
+      "supports": ["fatigue_association", "mixed_mental_health_evidence"]
+    }
+  ]
+}

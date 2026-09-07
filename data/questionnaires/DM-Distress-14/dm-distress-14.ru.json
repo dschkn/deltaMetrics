@@ -1,0 +1,33 @@
+{
+  "id": "dm-distress-14-v1-ru",
+  "name": "DeltaMetrics: напряжение и сниженное настроение",
+  "language": "ru",
+  "version": "1.0.0",
+  "status": "project_authored_unvalidated_not_HADS",
+  "notice": "Независимый опросник DeltaMetrics. Не является HADS и не использует формулировки или диагностические пороги HADS.",
+  "recallPeriodDays": 7,
+  "responseScale": [
+    {"value": 0, "label": "ни разу"},
+    {"value": 1, "label": "иногда"},
+    {"value": 2, "label": "часто"},
+    {"value": 3, "label": "почти постоянно"}
+  ],
+  "items": [
+    {"id": "DM_D14_A1", "domain": "tension", "text": "Мне было трудно внутренне расслабиться."},
+    {"id": "DM_D14_A2", "domain": "worry", "text": "Тревожные мысли возвращались, даже когда я пытался переключиться."},
+    {"id": "DM_D14_A3", "domain": "anticipation", "text": "Я ожидал, что может произойти что-то плохое."},
+    {"id": "DM_D14_A4", "domain": "restlessness", "text": "Мне было трудно спокойно оставаться на месте."},
+    {"id": "DM_D14_A5", "domain": "body_anxiety", "text": "Напряжение ощущалось в теле."},
+    {"id": "DM_D14_A6", "domain": "overload", "text": "Обычные требования казались чрезмерными."},
+    {"id": "DM_D14_A7", "domain": "control", "text": "Мне было трудно вернуть ощущение контроля над состоянием."},
+    {"id": "DM_D14_M1", "domain": "interest", "text": "Мне было трудно заинтересоваться привычными занятиями."},
+    {"id": "DM_D14_M2", "domain": "pleasure", "text": "Приятные события приносили меньше удовольствия, чем обычно."},
+    {"id": "DM_D14_M3", "domain": "motivation", "text": "Мне было трудно начать даже небольшое дело."},
+    {"id": "DM_D14_M4", "domain": "hope", "text": "Будущее казалось лишённым хороших возможностей."},
+    {"id": "DM_D14_M5", "domain": "connection", "text": "Я чувствовал эмоциональную отдалённость от людей."},
+    {"id": "DM_D14_M6", "domain": "engagement", "text": "Дни проходили без ощущения вовлечённости."},
+    {"id": "DM_D14_M7", "domain": "self_efficacy", "text": "Мне казалось, что я плохо справляюсь с жизнью."}
+  ],
+  "scoring": {"clinicalScore": false, "showItemAndDomainTrendsOnly": true, "noDiagnosticBands": true},
+  "schedule": {"defaultCadenceDays": null, "triggeredOnly": true}
+}

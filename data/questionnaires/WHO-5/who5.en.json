@@ -1,0 +1,40 @@
+{
+  "id": "who5-2024-en",
+  "name": "WHO-5 Well-Being Index",
+  "language": "en",
+  "version": "WHO/UCN/MSD/MHE/2024.01",
+  "status": "validated",
+  "recallPeriodDays": 14,
+  "instructions": "Please indicate for each of the five statements which is closest to how you have been feeling over the last two weeks.",
+  "responseScale": [
+    {"value": 5, "label": "All of the time"},
+    {"value": 4, "label": "Most of the time"},
+    {"value": 3, "label": "More than half of the time"},
+    {"value": 2, "label": "Less than half of the time"},
+    {"value": 1, "label": "Some of the time"},
+    {"value": 0, "label": "At no time"}
+  ],
+  "items": [
+    {"id": "WHO5_1", "text": "I have felt cheerful and in good spirits"},
+    {"id": "WHO5_2", "text": "I have felt calm and relaxed"},
+    {"id": "WHO5_3", "text": "I have felt active and vigorous"},
+    {"id": "WHO5_4", "text": "I woke up feeling fresh and rested"},
+    {"id": "WHO5_5", "text": "My daily life has been filled with things that interest me"}
+  ],
+  "scoring": {
+    "requiresAllItems": true,
+    "rawRange": [0, 25],
+    "normalizedRange": [0, 100],
+    "normalizedFormula": "raw_sum * 4",
+    "followUpRule": "raw_sum < 13 OR any_item <= 1",
+    "interpretation": "A low score is a screening signal for further assessment, not a diagnosis."
+  },
+  "schedule": {"defaultCadenceDays": 14, "doNotSplitOrRotateItems": true},
+  "source": {
+    "publisher": "World Health Organization",
+    "url": "https://www.who.int/publications/m/item/WHO-UCN-MSD-MHE-2024.01",
+    "license": "CC BY-NC-SA 3.0 IGO",
+    "attributionRequired": true,
+    "commercialUse": "not_permitted_without_separate_permission"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "timezonePolicy": "user_profile_timezone",
+  "rules": [
+    {
+      "id": "daily_check_in",
+      "type": "calendar",
+      "instrumentId": "dm-daily-check-in-v1-ru",
+      "cadenceDays": 1,
+      "cooldownHours": 18,
+      "priority": 20
+    },
+    {
+      "id": "who5_fortnightly",
+      "type": "calendar",
+      "instrumentId": "who5-2024-en",
+      "cadenceDays": 14,
+      "cooldownDays": 10,
+      "priority": 40
+    },
+    {
+      "id": "phq4_monthly",
+      "type": "calendar",
+      "instrumentId": "phq4-2009-en",
+      "cadenceDays": 30,
+      "cooldownDays": 21,
+      "priority": 50
+    },
+    {
+      "id": "global_profile_monthly",
+      "type": "calendar",
+      "instrumentId": "dm-global-10-v1-ru",
+      "cadenceDays": 30,
+      "cooldownDays": 21,
+      "priority": 30
+    },
+    {
+      "id": "who5_low_to_phq4",
+      "type": "score",
+      "when": {"instrumentId": "who5-2024-en", "rawScoreLessThan": 13},
+      "schedule": "phq4-2009-en",
+      "delayDays": 0,
+      "cooldownDays": 14,
+      "priority": 90,
+      "basis": "WHO-5 official further-assessment rule"
+    },
+    {
+      "id": "who5_low_item_to_phq4",
+      "type": "score",
+      "when": {"instrumentId": "who5-2024-en", "anyItemLessThanOrEqual": 1},
+      "schedule": "phq4-2009-en",
+      "delayDays": 0,
+      "cooldownDays": 14,
+      "priority": 90,
+      "basis": "WHO-5 official further-assessment rule"
+    },
+    {
+      "id": "persistent_low_mood",
+      "type": "diary_trend",
+      "when": {"itemId": "DM_DAY_MOOD", "valueLessThanOrEqual": 3, "minimumOccurrences": 4, "windowDays": 7},
+      "schedule": "phq4-2009-en",
+      "delayDays": 0,
+      "cooldownDays": 14,
+      "priority": 80,
+      "basis": "DeltaMetrics conservative product heuristic; not a validated clinical threshold"
+    },
+    {
+      "id": "phq4_moderate_to_distress_detail",
+      "type": "score",
+      "when": {"instrumentId": "phq4-2009-en", "totalScoreGreaterThanOrEqual": 6},
+      "schedule": "dm-distress-14-v1-ru",
+      "delayDays": 0,
+      "cooldownDays": 14,
+      "priority": 70,
+      "basis": "PHQ-4 moderate-or-higher severity band; detail module itself is unvalidated"
+    }
+  ],
+  "deliveryPolicy": {
+    "maxScheduledInstrumentsPerDay": 2,
+    "dailyCheckInMayBeCombinedWithOnePeriodicInstrument": true,
+    "neverRepeatValidatedInstrumentInsideCooldown": true,
+    "allowSnooze": true,
+    "allowDecline": true
+  }
+}

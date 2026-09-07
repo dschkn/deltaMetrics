@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-09-07",
+  "policy": {
+    "purpose": "Longitudinal self-report monitoring and screening; never diagnosis",
+    "patientFacingTerm": "пользователь",
+    "missingAnswerPolicy": "missing_not_zero",
+    "labTriggerPolicy": "A laboratory result may schedule a questionnaire, but may never calculate or imply a mental-health diagnosis.",
+    "licensedContentPolicy": "Only redistribute exact item text when the source explicitly permits repository and app distribution."
+  },
+  "instruments": [
+    {
+      "id": "who5-2024-en",
+      "file": "WHO-5/who5.en.json",
+      "kind": "validated",
+      "defaultCadenceDays": 14,
+      "additionalTriggers": ["who5_due", "vitamin_d_deficient", "ferritin_deficient", "patient_requested"]
+    },
+    {
+      "id": "phq4-2009-en",
+      "file": "PHQ-4/phq4.en.json",
+      "kind": "validated_screening",
+      "defaultCadenceDays": 30,
+      "additionalTriggers": ["who5_low", "who5_rapid_decline", "persistent_low_daily_mood", "patient_requested"]
+    },
+    {
+      "id": "dm-global-10-v1-ru",
+      "file": "DM-Global-10/dm-global-10.ru.json",
+      "kind": "project_authored_unvalidated",
+      "defaultCadenceDays": 30,
+      "additionalTriggers": ["broad_health_change", "patient_requested"]
+    },
+    {
+      "id": "dm-distress-14-v1-ru",
+      "file": "DM-Distress-14/dm-distress-14.ru.json",
+      "kind": "project_authored_unvalidated",
+      "defaultCadenceDays": null,
+      "additionalTriggers": ["phq4_moderate_or_higher", "persistent_low_daily_mood", "patient_requested"]
+    },
+    {
+      "id": "dm-daily-check-in-v1-ru",
+      "file": "daily-check-in/daily-check-in.ru.json",
+      "kind": "project_authored_diary",
+      "defaultCadenceDays": 1,
+      "additionalTriggers": ["lab_followup_window", "patient_requested"]
+    }
+  ]
+}

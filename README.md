@@ -15,6 +15,19 @@ DeltaMetrics turns medical reports collected over time into a searchable matrix:
 - profile and prototype sign-in flow
 - responsive desktop and mobile layouts
 
+## Questionnaire data layer
+
+The repository includes a versioned questionnaire and adaptive-scheduling module in `data/questionnaires/`:
+
+- exact distributable WHO-5 and PHQ-4 source instruments and scoring rules
+- a daily Russian-language DeltaMetrics check-in
+- independent DeltaMetrics broad-health and distress modules (explicitly not PROMIS or HADS)
+- routine daily, fortnightly and monthly cadence
+- conservative score-, diary- and laboratory-triggered scheduling
+- machine-readable evidence and rights provenance
+
+PROMIS and HADS item text is not bundled because their publishers require permission for redistribution and/or app integration. Laboratory rules can only request symptom measurement; they cannot infer a psychiatric diagnosis, causal relationship, or treatment.
+
 All values, dates, documents, and profile fields currently committed to the repository are fictional demo fixtures.
 
 ## Demo access

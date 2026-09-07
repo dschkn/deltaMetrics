@@ -1,0 +1,24 @@
+{
+  "id": "dm-global-10-v1-ru",
+  "name": "DeltaMetrics: общий профиль здоровья",
+  "language": "ru",
+  "version": "1.0.0",
+  "status": "project_authored_unvalidated_not_PROMIS",
+  "notice": "Независимый опросник DeltaMetrics. Не является PROMIS Global-10, не использует его формулировки, нормы или T-score.",
+  "recallPeriodDays": 7,
+  "responseScale": {"min": 0, "max": 10, "step": 1},
+  "items": [
+    {"id": "DM_G10_01", "domain": "overall", "text": "Как в целом вы оцениваете прошедшую неделю?"},
+    {"id": "DM_G10_02", "domain": "physical", "text": "Насколько физическое состояние позволяло вам жить обычной жизнью?"},
+    {"id": "DM_G10_03", "domain": "emotional", "text": "Насколько устойчивым было ваше эмоциональное состояние?"},
+    {"id": "DM_G10_04", "domain": "function", "text": "Насколько успешно вы справлялись с повседневными делами?"},
+    {"id": "DM_G10_05", "domain": "social", "text": "Насколько вас устраивало общение и ощущение связи с другими людьми?"},
+    {"id": "DM_G10_06", "domain": "energy", "text": "Насколько вам хватало энергии на необходимые дела?"},
+    {"id": "DM_G10_07", "domain": "pain", "text": "Насколько боль или телесный дискомфорт мешали вам?", "direction": "higher_is_worse"},
+    {"id": "DM_G10_08", "domain": "cognition", "text": "Насколько ясными и собранными были ваши мысли?"},
+    {"id": "DM_G10_09", "domain": "sleep", "text": "Насколько сон помогал вам восстанавливаться?"},
+    {"id": "DM_G10_10", "domain": "stress", "text": "Насколько стресс мешал вашей повседневной жизни?", "direction": "higher_is_worse"}
+  ],
+  "scoring": {"clinicalScore": false, "domainScoresOnly": true, "reverseBeforeDisplay": ["DM_G10_07", "DM_G10_10"]},
+  "schedule": {"defaultCadenceDays": 30}
+}

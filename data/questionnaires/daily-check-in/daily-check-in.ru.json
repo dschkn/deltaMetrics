@@ -1,0 +1,27 @@
+{
+  "id": "dm-daily-check-in-v1-ru",
+  "name": "DeltaMetrics: ежедневное самочувствие",
+  "language": "ru",
+  "version": "1.0.0",
+  "status": "project_authored_diary_not_validated",
+  "recallPeriod": "today",
+  "instructions": "Оцените сегодняшнее состояние. Здесь нет правильных ответов; показатели предназначены для вашей личной динамики.",
+  "responseScale": {"min": 0, "max": 10, "step": 1},
+  "items": [
+    {"id": "DM_DAY_MOOD", "domain": "mood", "text": "Как бы вы оценили своё настроение сегодня?", "anchors": {"0": "крайне плохое", "10": "отличное"}},
+    {"id": "DM_DAY_ENERGY", "domain": "energy", "text": "Сколько энергии у вас было сегодня?", "anchors": {"0": "сил совсем не было", "10": "очень много энергии"}},
+    {"id": "DM_DAY_TENSION", "domain": "tension", "text": "Насколько сильными сегодня были напряжение или стресс?", "anchors": {"0": "не было", "10": "крайне сильные"}},
+    {"id": "DM_DAY_PHYSICAL", "domain": "physical", "text": "Как вы оцениваете физическое самочувствие сегодня?", "anchors": {"0": "крайне плохое", "10": "отличное"}},
+    {"id": "DM_DAY_SLEEP", "domain": "sleep", "text": "Насколько восстановительным был последний сон?", "anchors": {"0": "совсем не восстановил", "10": "полностью восстановил"}},
+    {"id": "DM_DAY_MANAGEABLE", "domain": "function", "text": "Насколько управляемым и посильным ощущался сегодняшний день?", "anchors": {"0": "совсем неуправляемым", "10": "полностью управляемым"}}
+  ],
+  "optionalFields": ["emotion_tags", "event_tags", "medication_adherence", "physical_activity", "alcohol", "nicotine", "free_text_note"],
+  "scoring": {
+    "clinicalScore": false,
+    "baselineWindowDays": 30,
+    "shortTrendWindowDays": 7,
+    "missingAnswers": "Do not impute as zero",
+    "direction": {"tension": "higher_is_worse", "allOtherNumericDomains": "higher_is_better"}
+  },
+  "schedule": {"defaultCadenceDays": 1, "maxPromptsPerDay": 1}
+}
